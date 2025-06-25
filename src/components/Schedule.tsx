@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clock, Calendar, Users, Calculator } from 'lucide-react';
+import { Clock, Users, Calculator } from 'lucide-react';
 
 const Schedule = () => {
   const [feeCalculator, setFeeCalculator] = useState({
@@ -7,16 +7,6 @@ const Schedule = () => {
     siblings: false,
     combo: false
   });
-
-  const scheduleData = [
-    { day: 'Monday', morning: '7:00 AM - 12:00 PM', evening: '4:00 PM - 8:00 PM', notes: 'All subjects available' },
-    { day: 'Tuesday', morning: '7:00 AM - 12:00 PM', evening: '4:00 PM - 8:00 PM', notes: 'Focus on Mathematics & Science' },
-    { day: 'Wednesday', morning: '7:00 AM - 12:00 PM', evening: '4:00 PM - 8:00 PM', notes: 'All subjects available' },
-    { day: 'Thursday', morning: '7:00 AM - 12:00 PM', evening: '4:00 PM - 8:00 PM', notes: 'Focus on Languages & Social Studies' },
-    { day: 'Friday', morning: '7:00 AM - 12:00 PM', evening: '4:00 PM - 8:00 PM', notes: 'All subjects available' },
-    { day: 'Saturday', morning: '8:00 AM - 1:00 PM', evening: '2:00 PM - 6:00 PM', notes: 'Doubt-solving sessions' },
-    { day: 'Sunday', morning: '9:00 AM - 12:00 PM', evening: '3:00 PM - 6:00 PM', notes: 'Revision & Test sessions' }
-  ];
 
   const calculateFee = () => {
     let baseFee = 2000; // Base fee per subject
@@ -45,60 +35,17 @@ const Schedule = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Schedule & Fees
+            Fees & Demo
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Flexible timings designed to accommodate students' school schedules with competitive and transparent pricing.
+            Competitive and transparent pricing with free demo sessions for all students.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Schedule Table */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Calendar className="h-6 w-6 text-blue-900 mr-3" />
-              Weekly Schedule
-            </h3>
-            
-            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-blue-900 text-white">
-                    <tr>
-                      <th className="px-4 py-3 text-left font-semibold">Day</th>
-                      <th className="px-4 py-3 text-left font-semibold">Morning</th>
-                      <th className="px-4 py-3 text-left font-semibold">Evening</th>
-                      <th className="px-4 py-3 text-left font-semibold">Notes</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    {scheduleData.map((schedule, index) => (
-                      <tr key={index} className="hover:bg-white transition-colors duration-200">
-                        <td className="px-4 py-3 font-medium text-gray-900">{schedule.day}</td>
-                        <td className="px-4 py-3 text-gray-600 text-sm">{schedule.morning}</td>
-                        <td className="px-4 py-3 text-gray-600 text-sm">{schedule.evening}</td>
-                        <td className="px-4 py-3 text-gray-500 text-sm">{schedule.notes}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-              <div className="flex items-center">
-                <Clock className="h-5 w-5 text-yellow-600 mr-2" />
-                <span className="text-yellow-800 font-medium">Flexible Timings Available</span>
-              </div>
-              <p className="text-yellow-700 text-sm mt-1">
-                Schedule can be adjusted based on student's school timings and preferences.
-              </p>
-            </div>
-          </div>
-
+        <div className="max-w-lg mx-auto">
           {/* Fee Calculator */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center">
               <Calculator className="h-6 w-6 text-blue-900 mr-3" />
               Fee Calculator
             </h3>
@@ -172,6 +119,17 @@ const Schedule = () => {
               >
                 Book Demo Class
               </button>
+            </div>
+
+            {/* Contact Info for Scheduling */}
+            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-center justify-center mb-2">
+                <Clock className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-blue-800 font-medium">Flexible Timings Available</span>
+              </div>
+              <p className="text-blue-700 text-sm text-center">
+                Schedule can be adjusted based on student's school timings and preferences. Contact us to discuss your preferred time slots.
+              </p>
             </div>
           </div>
         </div>
